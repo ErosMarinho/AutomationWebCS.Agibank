@@ -10,20 +10,20 @@
 
         #region Botões do Sistema
 
-        public void ClicaIconePesquisa()
+        public void ClicaBtnIconePesquisa()
         {
-            ClicaElemento("(//*[@class='ast-icon icon-search'])[2]", "ícone de Pesquisa");
+            ClicaElemento("(//*[@class='ast-icon icon-search'])[2]", "botão ícone de Pesquisa");
         }
 
         #endregion
 
         #region Campos do Sistema
-
-        public void PreencheCampoPesquisaSemSucesso()
+               
+        public void ApagarTxtCampoPesquisa()
         {
-            EscreveTexto("//*[@class='search-field']", "Bolsa Familia", "busca por: Bolsa Familia"); Enter();
-            Enter();
+            LimpaDados("//*[@class='search-field']");
         }
+
 
         #endregion
     }

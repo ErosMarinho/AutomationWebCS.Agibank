@@ -13,7 +13,7 @@
             ValidaTxtsSubMenuPrimeiro();
             MoveMouseSegundoMenu();
             ValidaTxtsSubMenuSegundo();
-            ClicaIconePesquisa();
+            ClicaBtnIconePesquisa();
             ValidaCampoPesquisa();
             ValidaBtnSetaEsquerda();
             ValidaBtnSetaDireita();
@@ -23,6 +23,12 @@
             ValidaPaginacao();
             ValidaTxtTitulo2();
             ValidaTxtsPostImagem();
+            ValidaTxtTitulo3();
+            ValidaBtnLinkAppStore();
+            ValidaBtnLinkGooglePlay();
+            ValidaTxtTitulo4();
+            ValidaCampoAdicionarEmail();
+            ValidaBtnInscreverse();
         }
     }
 }

@@ -195,7 +195,7 @@ namespace AutomationWebCS.Agibank.Core_Padrao
                 testPassed = false; var msgErr = $"Elemento {description} <b>não</b> está presente.";
                 if (description != null) Log(msgErr); Assert.Fail(msgErr);
             }
-        }
+        }       
         public void ValidaElementoDesabilitado(string xpath, [Optional] string description)
         {
             var elementEnabled = driver.FindElement(By.XPath(xpath)).GetAttribute("disabled");

@@ -78,7 +78,7 @@ namespace MainProject
         }
         public void ValidaBtnSetaDireita()
         {
-            ValidaElementoPresente("//*[@class='slick-prev slick-arrow']", "botão seta esquerda para visualizar post informativo");
+            ValidaElementoPresente("//*[@class='slick-prev slick-arrow']", "botão seta direita para visualizar post informativo");
         }
         public void ValidaPostImagem()
         {
@@ -91,18 +91,19 @@ namespace MainProject
         }                
         public void ValidaTxtsSubTitulosGrid()
         {
-            var txt1 = "Holerite: o que é e qual a importância desse documento";
-            ValidaDados($"(//*[text()='{txt1}'])[3]", txt1, $"texto subtitulo: {txt1}");
+            MoveToElemento("//*[@id='post-4102']/div/div[2]/article[1]/h3/a");
+            var txt1 = CapturaDados("//*[@id='post-4102']/div/div[2]/article[1]/h3/a", GetAttrib.innerText);
+            ValidaDados($"//*[@id='post-4102']/div/div[2]/article[1]/h3/a", txt1, $"texto do grid: {txt1}");
             var txt2 = CapturaDados("//*[@id='post-4102']/div/div[2]/article[2]/h3/a", GetAttrib.innerText);
-            ValidaDados($"//*[@id='post-4102']/div/div[2]/article[2]/h3/a", txt2, $"texto subtitulo: {txt2}");            
-            var txt3 = "Saiba qual é o Rendimento da Poupança hoje";
-            ValidaDados($"(//*[text()='{txt3}'])[3]", txt3, $"texto subtitulo: {txt3}");
+            ValidaDados($"//*[@id='post-4102']/div/div[2]/article[2]/h3/a", txt2, $"texto do grid: {txt2}");
+            var txt3 = CapturaDados("//*[@id='post-4102']/div/div[2]/article[3]/h3/a", GetAttrib.innerText);
+            ValidaDados($"//*[@id='post-4102']/div/div[2]/article[3]/h3/a", txt3, $"texto do grid: {txt3}");
             var txt4 = CapturaDados("//*[@id='post-4102']/div/div[2]/article[4]/h3/a", GetAttrib.innerText);
-            ValidaDados($"//*[@id='post-4102']/div/div[2]/article[4]/h3/a", txt4, $"texto subtitulo: {txt4}");
+            ValidaDados($"//*[@id='post-4102']/div/div[2]/article[4]/h3/a", txt4, $"texto do grid: {txt4}");
             var txt5 = CapturaDados("//*[@id='post-4102']/div/div[2]/article[5]/h3/a", GetAttrib.innerText);
-            ValidaDados($"//*[@id='post-4102']/div/div[2]/article[5]/h3/a", txt5, $"texto subtitulo: {txt5}");
-            var txt6 = "Conheça os 7 golpes financeiros mais comuns no Brasil";
-            ValidaDados($"(//*[text()='{txt6}'])[4]", txt6, $"texto subtitulo: {txt6}");
+            ValidaDados($"//*[@id='post-4102']/div/div[2]/article[5]/h3/a", txt5, $"texto do grid: {txt5}");
+            var txt6 = CapturaDados("//*[@id='post-4102']/div/div[2]/article[6]/h3/a", GetAttrib.innerText);
+            ValidaDados($"//*[@id='post-4102']/div/div[2]/article[6]/h3/a", txt6, $"texto do grid: {txt6}");
         }
         public void ValidaPaginacao()
         {
@@ -121,6 +122,32 @@ namespace MainProject
             ValidaDados($"//*[@id='post-4102']/div/div[5]/article[2]/h3/a", txt2, $"texto do post imagem: {txt2}");
             var txt3 = CapturaDados("//*[@id='post-4102']/div/div[5]/article[3]/h3/a", GetAttrib.innerText);
             ValidaDados($"//*[@id='post-4102']/div/div[5]/article[3]/h3/a", txt3, $"texto do post imagem: {txt3}");
-        }          
+        }
+        public void ValidaTxtTitulo3()
+        {
+            var txt = "Baixe agora mesmo o App do Agi e abra sua conta com a gente!";
+            ValidaDados($"//*[text()='{txt}']", txt, $"texto terceiro Titulo: {txt}");
+        }
+        public void ValidaBtnLinkAppStore()
+        {
+            ValidaElementoPresente("//*[@class='wp-image-4142']", "botão link AppStore da Apple");
+        }
+        public void ValidaBtnLinkGooglePlay()
+        {
+            ValidaElementoPresente("//*[@class='wp-image-4141']", "botão link Google Play da");
+        }
+        public void ValidaTxtTitulo4()
+        {
+            var txt = "Se inscreva para receber as principais novidades do Blog do Agi!";
+            ValidaDados($"//*[contains(text(),'{txt}')]", txt, $"texto quarto Titulo: {txt}");
+        }
+        public void ValidaCampoAdicionarEmail()
+        {
+            ValidaElementoPresente("(//*[@name='email'])[1]", "campo para adicionar email");
+        }
+        public void ValidaBtnInscreverse()
+        {
+            ValidaElementoPresente("//*[@name='jetpack_subscriptions_widget']", "botão Inscreve-se");
+        }
     }
 }
